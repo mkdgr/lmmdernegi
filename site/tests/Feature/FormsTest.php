@@ -7,6 +7,7 @@ use App\Models\ContactMessage;
 use App\Models\MembershipApplication;
 use App\Models\NewsletterSubscriber;
 use App\Models\Question;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Tests\Concerns\SeedsSiteContent;
@@ -21,7 +22,7 @@ class FormsTest extends TestCase
         parent::setUp();
         $this->seedSite();
         Mail::fake();
-        $this->withoutMiddleware(\Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class);
+        $this->withoutMiddleware(ValidateCsrfToken::class);
     }
 
     public function test_question_is_saved_and_admin_is_notified(): void

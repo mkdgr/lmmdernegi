@@ -35,15 +35,28 @@ class PageResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $modelLabel = 'sayfa';
+    protected static ?string $modelLabel = 'Sayfa';
 
     protected static ?string $pluralModelLabel = 'Sayfalar ve rehberler';
 
+    protected static ?string $navigationLabel = 'Sayfalar ve rehberler';
+
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make('Genel')->columns(3)->schema([
                 Select::make('section')->label('Bölüm')->options(Page::SECTIONS)->required()->native(false)
                     ->helperText('"Hasta rehberi" sayfaları ana sayfadaki "Şu an neredesiniz?" alanında görünür.'),

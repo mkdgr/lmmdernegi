@@ -621,6 +621,8 @@ legend { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem;
 .side-card + .side-card { margin-top: 18px; }
 .side-card--blue { background: var(--blue); color: #e1edf8; }
 .side-card--blue h3 { color: #fff; }
+.side-card--blue p, .side-card--blue li { color: #e1edf8; }
+.side-card--blue a { color: #fff; }
 .side-card ul { padding-left: 1.1em; margin: 0; color: var(--ink-2); }
 .side-card li { margin-bottom: 6px; }
 

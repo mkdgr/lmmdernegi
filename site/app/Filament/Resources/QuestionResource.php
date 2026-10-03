@@ -30,9 +30,11 @@ class QuestionResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $modelLabel = 'soru';
+    protected static ?string $modelLabel = 'Soru';
 
     protected static ?string $pluralModelLabel = 'Uzmana sorulanlar';
+
+    protected static ?string $navigationLabel = 'Uzmana sorulanlar';
 
     public static function getNavigationBadge(): ?string
     {
@@ -51,9 +53,20 @@ class QuestionResource extends Resource
         return false;
     }
 
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make('Gelen soru')->columns(3)->schema([
                 TextEntry::make('name')->label('Ad soyad'),
                 TextEntry::make('email')->label('E-posta')->copyable(),

@@ -32,15 +32,28 @@ class PublicationResource extends Resource
 
     protected static ?int $navigationSort = 5;
 
-    protected static ?string $modelLabel = 'yayın';
+    protected static ?string $modelLabel = 'Yayın';
 
     protected static ?string $pluralModelLabel = 'Yayınlar ve bülten';
 
+    protected static ?string $navigationLabel = 'Yayınlar ve bülten';
+
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make()->columns(2)->schema([
                 Select::make('kind')->label('Tür')->options(Publication::KINDS)->required()->native(false),
                 TextInput::make('issue_no')->label('Sayı no')->numeric(),

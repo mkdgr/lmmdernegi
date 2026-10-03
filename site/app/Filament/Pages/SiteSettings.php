@@ -54,7 +54,7 @@ class SiteSettings extends Page
 
     public function form(Schema $schema): Schema
     {
-        return $schema->statePath('data')->components([
+        return $schema->statePath('data')->columns(1)->components([
             Section::make('İletişim')->columns(2)->schema([
                 TextInput::make('phone')->label('Telefon')->required()->placeholder('0530 156 87 68'),
                 TextInput::make('whatsapp')->label('WhatsApp hattı')->placeholder('0530 156 87 68')

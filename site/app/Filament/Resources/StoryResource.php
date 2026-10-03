@@ -35,15 +35,28 @@ class StoryResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
-    protected static ?string $modelLabel = 'hikâye';
+    protected static ?string $modelLabel = 'Hikâye';
 
     protected static ?string $pluralModelLabel = 'Hikâyeler';
 
+    protected static ?string $navigationLabel = 'Hikâyeler';
+
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make('Hikâye sahibi')->columns(3)->schema([
                 TextInput::make('person_name')->label('Ad (sitede görünecek hâli)')->required()->maxLength(120)
                     ->helperText('Örn. "Ayşe K." — tam ad için açık izin alın.'),

@@ -26,13 +26,26 @@ class RedirectResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $modelLabel = 'yönlendirme';
+    protected static ?string $modelLabel = 'Yönlendirme';
 
     protected static ?string $pluralModelLabel = 'Yönlendirmeler';
 
+    protected static ?string $navigationLabel = 'Yönlendirmeler';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             TextInput::make('from_path')->label('Eski adres')->required()->placeholder('/eski-sayfa.html')
                 ->helperText('Alan adı olmadan, / ile başlayan yol. Eski sitenin /TR,23/... adresleri zaten otomatik yönlendirilir.')
                 ->unique(ignoreRecord: true),

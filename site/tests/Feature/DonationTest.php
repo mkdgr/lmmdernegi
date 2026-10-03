@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Mail\AdminNotification;
 use App\Models\Donation;
 use App\Services\GarantiPos;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Mail;
 use Tests\Concerns\SeedsSiteContent;
@@ -24,7 +25,7 @@ class DonationTest extends TestCase
         parent::setUp();
         $this->seedSite();
         Mail::fake();
-        $this->withoutMiddleware(\Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class);
+        $this->withoutMiddleware(ValidateCsrfToken::class);
     }
 
     private function configurePos(): void
@@ -158,5 +159,17 @@ class DonationTest extends TestCase
         $this->post('/odeme/garanti/basarisiz', $this->bankResponse($d, ['procreturncode' => '99']));
 
         $this->assertSame('basarili', $d->fresh()->status);
+    }
+
+    public function test_amount_mismatch_is_rejected(): void
+    {
+        $this->configurePos();
+        $this->post('/bagis', $this->form);
+        $d = Donation::sole();
+
+        $this->post('/odeme/garanti/basarili', $this->bankResponse($d, ['txnamount' => '100']));
+
+        $this->assertSame('basarisiz', $d->fresh()->status);
+        $this->assertSame('Tutar uyuşmuyor', $d->fresh()->bank_message);
     }
 }

@@ -30,9 +30,11 @@ class ContactMessageResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $modelLabel = 'mesaj';
+    protected static ?string $modelLabel = 'Mesaj';
 
     protected static ?string $pluralModelLabel = 'İletişim mesajları';
+
+    protected static ?string $navigationLabel = 'İletişim mesajları';
 
     public static function getNavigationBadge(): ?string
     {
@@ -46,9 +48,20 @@ class ContactMessageResource extends Resource
         return false;
     }
 
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make()->columns(3)->schema([
                 TextEntry::make('name')->label('Ad soyad'),
                 TextEntry::make('email')->label('E-posta')->copyable(),

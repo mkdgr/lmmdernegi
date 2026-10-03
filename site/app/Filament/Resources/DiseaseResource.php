@@ -35,15 +35,28 @@ class DiseaseResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $modelLabel = 'hastalık';
+    protected static ?string $modelLabel = 'Hastalık';
 
     protected static ?string $pluralModelLabel = 'Hastalıklar';
 
+    protected static ?string $navigationLabel = 'Hastalıklar';
+
     protected static ?string $recordTitleAttribute = 'name';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make('Genel')->columns(4)->schema([
                 TextInput::make('abbr')->label('Kısaltma (TR)')->required()->maxLength(12)->helperText('Örn. AML, KML'),
                 TextInput::make('abbr_translated.en')->label('Kısaltma (EN)')->maxLength(12)->helperText('Farklıysa: KML → CML'),

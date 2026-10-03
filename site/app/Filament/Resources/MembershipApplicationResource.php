@@ -28,9 +28,11 @@ class MembershipApplicationResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $modelLabel = 'üyelik başvurusu';
+    protected static ?string $modelLabel = 'Üyelik başvurusu';
 
     protected static ?string $pluralModelLabel = 'Üyelik başvuruları';
+
+    protected static ?string $navigationLabel = 'Üyelik başvuruları';
 
     public static function getNavigationBadge(): ?string
     {
@@ -44,9 +46,20 @@ class MembershipApplicationResource extends Resource
         return false;
     }
 
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make()->columns(3)->schema([
                 TextEntry::make('name')->label('Ad soyad'),
                 TextEntry::make('tckn')->label('T.C. kimlik no')->placeholder('—'),

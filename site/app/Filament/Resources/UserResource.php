@@ -27,13 +27,26 @@ class UserResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $modelLabel = 'kullanıcı';
+    protected static ?string $modelLabel = 'Kullanıcı';
 
     protected static ?string $pluralModelLabel = 'Panel kullanıcıları';
 
+    protected static ?string $navigationLabel = 'Panel kullanıcıları';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             TextInput::make('name')->label('Ad soyad')->required(),
             TextInput::make('email')->label('E-posta')->email()->required()->unique(ignoreRecord: true),
             TextInput::make('password')->label('Şifre')->password()->revealable()

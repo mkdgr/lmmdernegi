@@ -30,9 +30,11 @@ class DonationResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
-    protected static ?string $modelLabel = 'bağış';
+    protected static ?string $modelLabel = 'Bağış';
 
     protected static ?string $pluralModelLabel = 'Bağışlar';
+
+    protected static ?string $navigationLabel = 'Bağışlar';
 
     protected static ?string $recordTitleAttribute = 'order_id';
 
@@ -53,7 +55,7 @@ class DonationResource extends Resource
 
     public static function infolist(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Section::make('Bağış')->columns(4)->schema([
                 TextEntry::make('order_id')->label('Sipariş no')->copyable(),
                 TextEntry::make('status')->label('Durum')->badge()->formatStateUsing(fn ($s) => Donation::STATUSES[$s] ?? $s)
@@ -84,6 +86,17 @@ class DonationResource extends Resource
                 KeyValueEntry::make('bank_response')->label('Ham yanıt')->columnSpanFull(),
             ]),
         ]);
+    }
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
     }
 
     public static function table(Table $table): Table

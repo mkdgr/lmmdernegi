@@ -93,7 +93,9 @@ class DonationController extends Controller
 
         $pos = GarantiPos::make();
         $verified = $pos->verifyResponse($data);
-        $approved = $verified && $pos->isApproved($data);
+        // Ek güvence: bankanın onayladığı tutar kayıttakiyle aynı olmalı (kuruş)
+        $amountOk = ! isset($data['txnamount']) || (string) $data['txnamount'] === (string) ($donation->amount * 100);
+        $approved = $verified && $amountOk && $pos->isApproved($data);
 
         if ($donation->status !== 'basarili') {
             $donation->update([
@@ -102,9 +104,11 @@ class DonationController extends Controller
                 'auth_code' => $data['authcode'] ?? null,
                 'host_ref' => $data['hostrefnum'] ?? null,
                 'bank_code' => $data['procreturncode'] ?? null,
-                'bank_message' => $verified
-                    ? ($data['errmsg'] ?? $data['mderrormessage'] ?? $data['response'] ?? null)
-                    : 'İmza (hash) doğrulanamadı',
+                'bank_message' => match (true) {
+                    ! $verified => 'İmza (hash) doğrulanamadı',
+                    ! $amountOk => 'Tutar uyuşmuyor',
+                    default => $data['errmsg'] ?? $data['mderrormessage'] ?? $data['response'] ?? null,
+                },
                 'masked_pan' => $data['MaskedPan'] ?? $data['maskedpan'] ?? null,
                 // Kart verisi tutulmaz; yalnızca sonuçla ilgili alanlar saklanır
                 'bank_response' => Arr::only($data, ['mdstatus', 'procreturncode', 'response', 'errmsg', 'mderrormessage',

@@ -26,13 +26,26 @@ class NewsletterSubscriberResource extends Resource
 
     protected static ?int $navigationSort = 5;
 
-    protected static ?string $modelLabel = 'abone';
+    protected static ?string $modelLabel = 'Abone';
 
     protected static ?string $pluralModelLabel = 'Bülten aboneleri';
+
+    protected static ?string $navigationLabel = 'Bülten aboneleri';
 
     public static function canCreate(): bool
     {
         return false;
+    }
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
     }
 
     public static function table(Table $table): Table

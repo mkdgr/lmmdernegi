@@ -40,15 +40,28 @@ class PostResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $modelLabel = 'haber / etkinlik';
+    protected static ?string $modelLabel = 'Haber / etkinlik';
 
     protected static ?string $pluralModelLabel = 'Haberler ve etkinlikler';
 
+    protected static ?string $navigationLabel = 'Haberler ve etkinlikler';
+
     protected static ?string $recordTitleAttribute = 'title';
+
+    /** Filament'in Her Kelimeyi Büyük yazmasını engelle (Türkçe başlık düzeni) */
+    public static function getTitleCasePluralModelLabel(): string
+    {
+        return static::getPluralModelLabel();
+    }
+
+    public static function getTitleCaseModelLabel(): string
+    {
+        return static::getModelLabel();
+    }
 
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
+        return $schema->columns(1)->components([
             Grid::make(3)->schema([
                 Section::make('Genel')->columnSpan(2)->columns(2)->schema([
                     Select::make('type')->label('Tür')->options(Post::TYPES)->required()->default('etkinlik')->native(false)->live(),
