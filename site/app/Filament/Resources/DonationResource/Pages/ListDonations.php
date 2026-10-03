@@ -11,6 +11,6 @@ class ListDonations extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\DonationResource\Pages];
+        return [];
     }
 }

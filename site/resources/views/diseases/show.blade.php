@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', $disease->name)
-@section('description', $disease->summary)
+@section('description', (string) $disease->summary)
 @section('nav', 'hastalik')
 @section('content')
 @php

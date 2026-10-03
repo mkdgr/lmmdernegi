@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\DiseaseResource\Pages;
 
 use App\Filament\Resources\DiseaseResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListDiseases extends ListRecords
@@ -11,6 +12,6 @@ class ListDiseases extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\DiseaseResource\Pages];
+        return [CreateAction::make()];
     }
 }

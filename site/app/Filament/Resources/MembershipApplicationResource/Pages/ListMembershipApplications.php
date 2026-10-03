@@ -11,6 +11,6 @@ class ListMembershipApplications extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\MembershipApplicationResource\Pages];
+        return [];
     }
 }

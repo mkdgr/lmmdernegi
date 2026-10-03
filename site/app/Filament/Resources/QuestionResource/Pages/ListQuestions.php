@@ -11,6 +11,6 @@ class ListQuestions extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\QuestionResource\Pages];
+        return [];
     }
 }

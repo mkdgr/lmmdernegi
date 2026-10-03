@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', $post->title)
-@section('description', $post->excerpt ?: $post->title)
+@section('title', (string) $post->title)
+@section('description', (string) ($post->excerpt ?: $post->title))
 @section('og_image', $post->image ? media_url($post->image) : '')
 @section('nav', 'etkinlik')
 @section('content')
@@ -13,10 +13,8 @@
         $gallery = $m[1];
         $body = trim(preg_replace('#<p>\s*(<img[^>]+>\s*)+</p>|<img[^>]+>#', '', $body));
     }
-    // Afiş zaten görsel olarak gösteriliyorsa gövdedeki aynı görseli tekrar gösterme
-    if ($post->image) {
-        $body = preg_replace('#<p>\s*<img[^>]+src="'.preg_quote(media_url($post->image), '#').'"[^>]*>\s*</p>|<img[^>]+src="'.preg_quote(media_url($post->image), '#').'"[^>]*>#', '', $body);
-    }
+    // Afiş gövdede zaten varsa kenar sütunda tekrar gösterme
+    $posterInBody = $post->image && (str_contains((string) $body, basename($post->image)) || ! empty($gallery));
     $crumb = $post->type === 'bilimsel' ? [__('Sağlık çalışanları için') => lroute('professionals')] : [__('Etkinlikler') => lroute('events.index')];
 @endphp
 <x-page-hero :title="$post->title" :lead="$post->excerpt" :crumbs="$crumb">
@@ -35,13 +33,13 @@
         @foreach ($gallery as $src)<a href="{{ $src }}" target="_blank" rel="noopener"><img src="{{ $src }}" alt="" loading="lazy"></a>@endforeach
       </div>
     @endif
-    @if (blank(strip_tags($body, '<img>')) && empty($gallery) && ! $post->image)
+    @if (blank(strip_tags((string) $body, '<img>')) && empty($gallery) && ! $post->image)
       <p>{{ __('Bu etkinlikle ilgili ayrıntılı bilgi için bizimle iletişime geçebilirsiniz.') }}</p>
     @endif
   </article>
 
   <aside class="sticky-side">
-    @if ($post->image)
+ @if ($post->image && ! $posterInBody)
       <a class="poster" href="{{ media_url($post->image) }}" target="_blank" rel="noopener"><img src="{{ media_url($post->image) }}" alt="{{ __('Afiş') }}: {{ $post->title }}"></a>
     @endif
     @if ($post->event_starts_at || $post->location || $post->video_url || $post->registration_url)

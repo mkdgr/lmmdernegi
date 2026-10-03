@@ -289,7 +289,7 @@ class LegacyContentSeeder extends Seeder
 
         foreach ($candidates as $id => $p) {
             $title = trim($p['title']);
-            $date = isset(self::EVENT_FACTS[$id]) ? Carbon::parse(self::EVENT_FACTS[$id][0]) : ($p['date'] ? Carbon::parse($p['date'].' 10:00') : null);
+            $date = isset(self::EVENT_FACTS[$id]) ? Carbon::parse(self::EVENT_FACTS[$id][0]) : ($p['date'] ? Carbon::parse($p['date']) : null);
             $approx = $date ?? Carbon::createFromTimestamp($this->interpolate($known, $id));
 
             $type = match (true) {

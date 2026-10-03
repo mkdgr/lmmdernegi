@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', $story->title)
-@section('description', $story->quote)
+@section('title', (string) $story->title)
+@section('description', (string) $story->quote)
 @section('nav', 'etkinlik')
 @section('content')
 <x-page-hero :title="$story->title" :crumbs="[__('Hikâyeler') => lroute('stories.index')]">

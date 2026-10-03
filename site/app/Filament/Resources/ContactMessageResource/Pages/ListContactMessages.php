@@ -11,6 +11,6 @@ class ListContactMessages extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\ContactMessageResource\Pages];
+        return [];
     }
 }

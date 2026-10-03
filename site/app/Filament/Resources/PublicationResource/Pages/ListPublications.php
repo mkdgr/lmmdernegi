@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PublicationResource\Pages;
 
 use App\Filament\Resources\PublicationResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListPublications extends ListRecords
@@ -11,6 +12,6 @@ class ListPublications extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\PublicationResource\Pages];
+        return [CreateAction::make()];
     }
 }

@@ -30,7 +30,11 @@
       <x-photo :src="setting('home_hero_photo')" :alt="__('Derneğimizin bir hasta buluşmasından')" :caption="__('Hasta buluşmasından bir fotoğraf')" />
       <span class="hero__dot" aria-hidden="true"></span>
       <span class="hero__dot hero__dot--sm" aria-hidden="true"></span>
-      <div class="hero__badge"><strong>2011</strong><span>{{ __('yılından beri hastaların yanında') }}</span></div>
+      @if (app()->getLocale() === 'en')
+        <div class="hero__badge"><span>Standing with patients since</span><strong>2011</strong></div>
+      @else
+        <div class="hero__badge"><strong>2011</strong><span>yılından beri hastaların yanında</span></div>
+      @endif
     </div>
   </div>
 </section>

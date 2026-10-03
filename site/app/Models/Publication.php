@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Concerns\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 
 class Publication extends Model
 {
@@ -21,7 +20,7 @@ class Publication extends Model
     public function url(): ?string
     {
         if ($this->file) {
-            return Storage::disk('public')->url($this->file);
+            return media_url($this->file);
         }
 
         return $this->external_url;

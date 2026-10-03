@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $title)
+@section('title', (string) $title)
 @section('content')
 <div class="container result-card">
   <div class="badge badge--info"><svg><use href="#i-info"/></svg></div>

@@ -15,6 +15,8 @@ class PageController extends Controller
             $other = app()->getLocale() === 'tr' ? 'en' : 'tr';
             $page = Page::published()->whereSlug($slug, $other)->first();
             abort_unless($page, 404);
+
+            return redirect(lroute(in_array($page->section, ['rehber', 'destek'], true) ? 'support.show' : 'page', $page->slugFor()), 301);
         }
 
         if (in_array($page->section, ['rehber', 'destek'], true)) {

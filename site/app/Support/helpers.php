@@ -2,7 +2,6 @@
 
 use App\Models\Page;
 use App\Models\Setting;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 
 if (! function_exists('lroute')) {
@@ -38,7 +37,8 @@ if (! function_exists('media_url')) {
             return asset($path);
         }
 
-        return Storage::disk('public')->url($path);
+        // Alan adından bağımsız: isteğin geldiği adresle /storage/... üret
+        return asset('storage/'.ltrim($path, '/'));
     }
 }
 

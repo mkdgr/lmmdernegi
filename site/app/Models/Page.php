@@ -17,6 +17,15 @@ class Page extends Model
         'yasal' => 'Yasal metinler',
     ];
 
+    /** Sitede kenar sütunda görünen bölüm başlıkları */
+    public const PUBLIC_SECTIONS = [
+        'rehber' => 'Şu an neredesiniz?',
+        'destek' => 'Konu rehberleri',
+        'kurumsal' => 'Hakkımızda',
+        'katilim' => 'Destek olun',
+        'yasal' => 'Yasal metinler',
+    ];
+
     public array $translatable = ['title', 'slug', 'summary', 'body'];
 
     protected $guarded = [];

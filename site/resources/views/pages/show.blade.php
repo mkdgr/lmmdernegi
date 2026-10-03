@@ -1,12 +1,13 @@
 @extends('layouts.app')
-@section('title', $page->title)
-@section('description', $page->summary)
-@section('nav', in_array($page->section, ['rehber', 'destek']) ? 'destek' : ($page->section === 'katilim' ? 'katilim' : 'kurumsal'))
+@section('title', (string) $page->title)
+@section('description', (string) $page->summary)
 @section('content')
 @php
     $body = $page->getTranslation('body', app()->getLocale(), false) ?: $page->getTranslation('body', 'tr', false);
     $crumbs = $crumb ? [$crumb['label'] => $crumb['url']] : [];
+    $navKey = ['rehber' => 'destek', 'destek' => 'destek', 'katilim' => 'katilim'][$page->section] ?? 'kurumsal';
 @endphp
+@section('nav', $navKey)
 <x-page-hero :title="$page->title" :lead="$page->summary" :crumbs="$crumbs" />
 
 <div class="container post-layout">
@@ -25,7 +26,7 @@
   <aside class="sticky-side">
     @if ($related->isNotEmpty())
       <nav class="sidenav" aria-label="{{ __('İlgili sayfalar') }}">
-        <h2>{{ __(\App\Models\Page::SECTIONS[$page->section] ?? 'İlgili sayfalar') }}</h2>
+        <h2>{{ __(\App\Models\Page::PUBLIC_SECTIONS[$page->section] ?? 'İlgili sayfalar') }}</h2>
         <ul>
           @foreach ($related as $r)
             <li><a href="{{ in_array($r->section, ['rehber', 'destek']) ? lroute('support.show', $r->slugFor()) : lroute('page', $r->slugFor()) }}">{{ $r->title }}</a></li>

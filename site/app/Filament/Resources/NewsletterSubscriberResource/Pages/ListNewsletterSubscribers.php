@@ -11,6 +11,6 @@ class ListNewsletterSubscribers extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [ACTIOApp\Filament\Resources\NewsletterSubscriberResource\Pages];
+        return [];
     }
 }
