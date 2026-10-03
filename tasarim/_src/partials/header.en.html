@@ -2,102 +2,113 @@
 
 <div class="topbar">
   <div class="container">
-    <div class="topbar__contact">
-      <span><svg><use href="#i-phone"/></svg><a href="tel:+905301568768">0530 156 87 68</a></span>
-      <span class="hide-sm"><svg><use href="#i-mail"/></svg><a href="mailto:info@losemilenfomamiyelom.org">info@losemilenfomamiyelom.org</a></span>
+    <nav class="topbar__links" aria-label="Quick links">
+      <a href="#">Stories</a>
+      <a href="#">For healthcare professionals</a>
+      <a href="#">News</a>
+      <a href="#">Press</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="a11y" role="group" aria-label="Text size and contrast">
+      <span>Text size</span>
+      <button type="button" data-fontsize-set="md" aria-label="Normal text size">A</button>
+      <button type="button" data-fontsize-set="lg" aria-label="Large text size" style="font-size:1.1em">A</button>
+      <button type="button" data-fontsize-set="xl" aria-label="Extra large text size" style="font-size:1.25em">A</button>
+      <button type="button" data-contrast-toggle aria-label="High contrast" title="High contrast">◐</button>
     </div>
-    <div class="topbar__tools">
-      <a class="topbar__ask" href="#"><svg><use href="#i-message"/></svg>Ask Us</a>
-      <div class="a11y" role="group" aria-label="Text size">
-        <button type="button" data-fontsize-set="md" aria-label="Normal text size">A</button>
-        <button type="button" data-fontsize-set="lg" aria-label="Large text size" style="font-size:1.05em">A</button>
-        <button type="button" data-fontsize-set="xl" aria-label="Extra large text size" style="font-size:1.2em">A</button>
-        <button type="button" data-contrast-toggle aria-label="High contrast" title="High contrast">◐</button>
-      </div>
-      <nav class="lang" aria-label="Language">
-        <a href="{{base}}index.html" lang="tr">TR</a>
-        <a href="{{base}}en/index.html" lang="en" aria-current="true">EN</a>
-      </nav>
-    </div>
+    <nav class="lang" aria-label="Language">
+      <a href="{{base}}index.html" lang="tr">TR</a>
+      <a href="{{base}}en/index.html" lang="en" aria-current="true">EN</a>
+    </nav>
   </div>
 </div>
 
 <header class="header">
   <div class="container">
     <a class="brand" href="{{base}}en/index.html">
-      <img src="{{base}}assets/img/logo.png" alt="" width="60" height="60">
-      <span class="brand__name">Leukemia Lymphoma<br>Myeloma Association<small>Standing with patients since 2011</small></span>
+      <img src="{{base}}assets/img/logo.png" alt="" width="58" height="58">
+      <span class="brand__name">Leukemia Lymphoma<br>Myeloma Association</span>
     </a>
 
     <div class="nav-backdrop" data-nav-close></div>
     <nav class="nav" id="site-nav" aria-label="Main menu">
-      <button class="nav-toggle nav-close" type="button" data-nav-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+      <button class="icon-btn nav-close" type="button" data-nav-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
       <ul class="nav__list">
         <li class="nav__item">
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-hastalik"{{cur:hastalik}}>Conditions <svg><use href="#i-chevron"/></svg></button>
           <ul class="dropdown dropdown--wide" id="dd-hastalik">
+            <li class="dropdown__head">Leukemia</li>
             <li><a href="#">Acute Myeloid Leukemia <small>AML</small></a></li>
             <li><a href="#">Acute Lymphoblastic Leukemia <small>ALL</small></a></li>
             <li><a href="#">Chronic Myeloid Leukemia <small>CML</small></a></li>
             <li><a href="#">Chronic Lymphocytic Leukemia <small>CLL</small></a></li>
+            <li class="dropdown__head">Lymphoma and myeloma</li>
             <li><a href="#">Hodgkin Lymphoma <small>HL</small></a></li>
             <li><a href="#">Non-Hodgkin Lymphoma <small>NHL</small></a></li>
             <li><a href="#">Multiple Myeloma <small>MM</small></a></li>
-            <li><a href="#">All conditions <small>Overview and glossary</small></a></li>
+            <li><a href="#">About blood cancer <small>Overview and glossary</small></a></li>
           </ul>
         </li>
         <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-rehber"{{cur:rehber}}>Patient Guide <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-rehber">
-            <li><a href="#">Newly diagnosed: what next?</a></li>
-            <li><a href="#">Nutrition and infection prevention</a></li>
-            <li><a href="#">Patient and physician rights</a></li>
-            <li><a href="#">A note on alternative treatments</a></li>
-            <li><a href="#">COVID-19 and vaccination</a></li>
-            <li><a href="#">Brochures and publications</a></li>
-            <li><a href="#">Frequently asked questions</a></li>
-          </ul>
-        </li>
-        <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek"{{cur:destek}}>Get Involved <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-destek">
-            <li><a href="#">Donate online</a></li>
-            <li><a href="#">Become a member</a></li>
-            <li><a href="#">Become a stem cell donor</a></li>
-            <li><a href="#">Volunteer</a></li>
-            <li><a href="#">Bank transfer details</a></li>
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek-al"{{cur:rehber}}>Support for you <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown dropdown--wide" id="dd-destek-al">
+            <li class="dropdown__head">Where are you now?</li>
+            <li><a href="#">I'm worried <small>Symptoms and tests</small></a></li>
+            <li><a href="#">Newly diagnosed <small>What to know in the first weeks</small></a></li>
+            <li><a href="#">In treatment <small>Side effects, nutrition, infection</small></a></li>
+            <li><a href="#">After treatment <small>Follow-up and life after</small></a></li>
+            <li><a href="#">Family and friends <small>How can I help?</small></a></li>
+            <li class="dropdown__head">Get in touch</li>
+            <li><a href="#">Ask an expert</a></li>
+            <li><a href="#">Patient meetings</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Patient rights</a></li>
+            <li><a href="#">Free booklets</a></li>
           </ul>
         </li>
         <li class="nav__item">
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-etkinlik"{{cur:etkinlik}}>Events <svg><use href="#i-chevron"/></svg></button>
           <ul class="dropdown" id="dd-etkinlik">
             <li><a href="#">News &amp; announcements</a></li>
+            <li><a href="#">Live stream recordings <small>Lymphoma Will End, CML Will End…</small></a></li>
             <li><a href="#">Congresses and symposia</a></li>
-            <li><a href="#">Awareness campaigns <small>Lymphoma Will End, CML Will End, I Am Here Too</small></a></li>
+            <li><a href="#">Awareness campaigns</a></li>
             <li><a href="#">Youth camp</a></li>
-            <li><a href="#">LLMBİR Newsletter</a></li>
             <li><a href="#">Photo gallery</a></li>
           </ul>
         </li>
-        <li class="nav__item"><a class="nav__link" href="#"{{cur:hikaye}}>Stories</a></li>
         <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-kurumsal"{{cur:kurumsal}}>About <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-kurumsal">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Board of directors</a></li>
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek-ol"{{cur:destek}}>Get involved <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown" id="dd-destek-ol">
+            <li><a href="#">Donate</a></li>
+            <li><a href="#">Become a member</a></li>
+            <li><a href="#">Become a stem cell donor</a></li>
+            <li><a href="#">Volunteer</a></li>
+            <li><a href="#">Bank transfer</a></li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-hakkimizda"{{cur:kurumsal}}>About us <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown" id="dd-hakkimizda">
+            <li><a href="#">Our association</a></li>
+            <li><a href="#">Board</a></li>
             <li><a href="#">Statute</a></li>
-            <li><a href="#">For healthcare professionals</a></li>
-            <li><a href="#">International links</a></li>
-            <li><a href="#">Press</a></li>
+            <li><a href="#">International partners</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </li>
       </ul>
+      <div class="nav__mobile-cta" style="display:none">
+        <a class="btn btn--blue" href="tel:+905301568768"><svg><use href="#i-phone"/></svg>+90 530 156 87 68</a>
+        <a class="btn btn--outline" href="#"><svg><use href="#i-question"/></svg>Ask an expert</a>
+      </div>
     </nav>
 
-    <div class="header__cta">
-      <a class="btn btn--primary btn--sm" href="#"><svg><use href="#i-heart"/></svg><span class="btn__label">Donate</span></a>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+905301568768"><svg><use href="#i-phone"/></svg><span><small>Call us</small><strong>+90 530 156 87 68</strong></span></a>
+      <a class="icon-btn header__search" href="{{base}}en/index.html#search" aria-label="Search"><svg><use href="#i-search"/></svg></a>
+      <a class="btn btn--primary" href="#">Donate</a>
+      <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><svg><use href="#i-menu"/></svg><span>Menu</span></button>
     </div>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
   </div>
 </header>

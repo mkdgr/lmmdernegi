@@ -1,227 +1,198 @@
 ---
 title: Lösemi Lenfoma Miyelom Derneği
-description: Lösemi, lenfoma ve miyelom hastaları ve yakınları için güvenilir bilgi, destek ve dayanışma.
+description: Lösemi, lenfoma ve miyelomla yaşayan insanlar ve aileleri için güvenilir bilgi, destek ve dayanışma.
 lang: tr
 active: home
 ---
 <main id="main">
 
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="container">
       <div>
-        <span class="hero__eyebrow"><span class="dot"></span>Hastalar ve yakınları için, 2011'den beri</span>
-        <h1>Bu yolda <em>yalnız değilsiniz.</em></h1>
-        <p class="hero__lead">Lösemi, lenfoma ve miyelomla ilgili anlaşılır ve güvenilir bilgiye ulaşın; sorularınızı uzmanlarımıza iletin, size uygun destekle tanışın.</p>
-        <div class="hero__actions">
-          <a class="btn btn--white" href="hastalik-aml.html"><svg><use href="#i-book"/></svg>Hastalık bilgileri</a>
-          <a class="btn btn--outline-white" href="#"><svg><use href="#i-message"/></svg>Derneğe sorun</a>
-        </div>
-      </div>
-
-      <div class="hero__card-wrap">
-        <img class="hero__mascot" src="assets/img/logo.png" alt="" width="104" height="104">
-        <form class="hero__card" action="bagis.html" method="get" data-donate>
-          <h2>Bir hastanın yanında olun</h2>
-          <p>Bağışınız; hasta eğitimleri, bilgilendirme yayınları ve farkındalık çalışmalarına dönüşür.</p>
-          <div class="segmented" role="radiogroup" aria-label="Bağış sıklığı">
-            <input type="radio" id="f-once" name="frequency" value="tek" data-label="Tek seferlik" checked><label for="f-once">Tek seferlik</label>
-            <input type="radio" id="f-month" name="frequency" value="aylik" data-label="Aylık"><label for="f-month">Aylık</label>
-          </div>
-          <div class="amounts" role="radiogroup" aria-label="Bağış tutarı">
-            <div class="amount"><input type="radio" id="a200" name="amount" value="200"><label for="a200">200 ₺</label></div>
-            <div class="amount"><input type="radio" id="a500" name="amount" value="500" checked><label for="a500">500 ₺</label></div>
-            <div class="amount"><input type="radio" id="a1000" name="amount" value="1000"><label for="a1000">1.000 ₺</label></div>
-          </div>
-          <label class="amount-custom"><span class="visually-hidden">Farklı tutar</span><input type="text" inputmode="numeric" name="custom" placeholder="Farklı tutar" data-amount-custom><span>₺</span></label>
-          <button class="btn btn--primary btn--block" type="submit"><svg><use href="#i-heart"/></svg>Bağış yap · <span data-amount-out>500 ₺</span></button>
-          <p class="secure-note"><svg><use href="#i-lock"/></svg>Garanti BBVA 3D Secure ile güvenli ödeme</p>
+        <span class="kicker">Lösemi · Lenfoma · Miyelom</span>
+        <h1 id="hero-title">Bu yolda <span>yalnız değilsiniz.</span></h1>
+        <p class="hero__lead">Hastalığınızla ilgili güvenilir bilgiye ulaşın, sorularınızı uzmanlarımıza sorun, sizinle aynı yoldan geçmiş insanlarla tanışın.</p>
+        <form class="search" id="ara" role="search" action="#">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <label class="visually-hidden" for="q">Sitede ara</label>
+          <input id="q" type="search" name="q" placeholder="Hastalık, belirti, tedavi…">
+          <button type="submit">Ara</button>
         </form>
+        <div class="quick">
+          <span>Sık arananlar:</span>
+          <a href="hastalik-aml.html">AML</a>
+          <a href="#">Multipl miyelom</a>
+          <a href="#">Kemoterapi yan etkileri</a>
+          <a href="#">Beslenme</a>
+          <a href="#">Kök hücre nakli</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <figure class="photo photo--empty">
+          <figcaption><svg><use href="#i-camera"/></svg><b>Fotoğraf</b>Hasta buluşmasından sıcak bir an: gülümseyen hasta ve yakını</figcaption>
+        </figure>
+        <span class="hero__dot" aria-hidden="true"></span>
+        <span class="hero__dot hero__dot--sm" aria-hidden="true"></span>
+        <div class="hero__badge"><strong>2011</strong><span>yılından beri hastaların yanında</span></div>
       </div>
     </div>
   </section>
 
-  <section class="container" aria-labelledby="paths-title">
-    <h2 id="paths-title" class="visually-hidden">Size nasıl yardımcı olabiliriz?</h2>
-    <div class="paths">
-      <article class="path">
-        <div class="path__icon"><svg><use href="#i-user"/></svg></div>
-        <h3>Hastayım ya da hasta yakınıyım</h3>
-        <p>Tanıdan tedaviye, her adımda sade dilde bilgi.</p>
-        <ul>
-          <li><a href="#">Yeni tanı aldım, ne yapmalıyım?</a></li>
-          <li><a href="#">Beslenme ve enfeksiyondan korunma</a></li>
-          <li><a href="#">Hasta hakları</a></li>
-        </ul>
-        <a class="btn btn--blue" href="#">Hasta rehberine git</a>
-      </article>
-      <article class="path path--orange">
-        <div class="path__icon"><svg><use href="#i-hands"/></svg></div>
-        <h3>Destek olmak istiyorum</h3>
-        <p>Bağış, üyelik ya da gönüllülükle fark yaratın.</p>
-        <ul>
-          <li><a href="bagis.html">Online bağış &amp; aidat</a></li>
-          <li><a href="#">Kök hücre vericisi olmak</a></li>
-          <li><a href="#">Derneğe üye olmak</a></li>
-        </ul>
-        <a class="btn btn--primary" href="bagis.html">Nasıl destek olabilirim?</a>
-      </article>
-      <article class="path path--teal">
-        <div class="path__icon"><svg><use href="#i-steth"/></svg></div>
-        <h3>Sağlık çalışanıyım</h3>
-        <p>Kongreler, sempozyumlar ve güncel bilimsel içerik.</p>
-        <ul>
-          <li><a href="#">Kongre ve sempozyumlar</a></li>
-          <li><a href="#">Bilimsel yayınlar</a></li>
-          <li><a href="#">Hasta yönlendirme materyalleri</a></li>
-        </ul>
-        <a class="btn btn--ghost" href="#">Sağlık çalışanları için</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="dis-title">
+  <section class="section" aria-labelledby="journey-title">
     <div class="container">
       <div class="section__head">
         <div>
-          <span class="eyebrow">Hastalık bilgileri</span>
-          <h2 id="dis-title">Hastalığınızı tanıyın</h2>
-          <p>Hematoloji uzmanlarınca hazırlanan, düzenli olarak gözden geçirilen hasta bilgilendirme sayfaları.</p>
+          <span class="kicker">Size özel bilgi</span>
+          <h2 id="journey-title">Şu an neredesiniz?</h2>
         </div>
-        <a class="link-arrow" href="#">Hastalar için genel bilgiler</a>
+        <p>Herkesin süreci farklı. Bulunduğunuz aşamayı seçin; size en çok lazım olacak bilgileri bir araya getirdik.</p>
       </div>
-      <div class="diseases">
-        <a class="disease" href="hastalik-aml.html"><span class="disease__abbr">AML</span><span class="disease__name">Akut Miyeloid Lösemi</span><span class="disease__type">Lösemi</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">ALL</span><span class="disease__name">Akut Lenfoblastik Lösemi</span><span class="disease__type">Lösemi</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">KML</span><span class="disease__name">Kronik Miyeloid Lösemi</span><span class="disease__type">Lösemi</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">KLL</span><span class="disease__name">Kronik Lenfositer Lösemi</span><span class="disease__type">Lösemi</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">HL</span><span class="disease__name">Hodgkin Lenfoma</span><span class="disease__type">Lenfoma</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">HDL</span><span class="disease__name">Hodgkin Dışı Lenfoma</span><span class="disease__type">Lenfoma</span></a>
-        <a class="disease" href="#"><span class="disease__abbr">MM</span><span class="disease__name">Multipl Miyelom</span><span class="disease__type">Miyelom</span></a>
-        <a class="disease disease--all" href="#"><span class="disease__abbr">?</span><span class="disease__name">Aklınızdaki soruyu sorun</span><span class="disease__type">Uzmanlarımız yanıtlasın</span></a>
+      <nav class="journey" aria-label="Hastalık sürecine göre bilgi">
+        <a href="#"><span class="journey__num">01</span><h3>Endişeliyim</h3><p>Belirtilerim var ya da tetkik bekliyorum.</p><span class="journey__go"><svg><use href="#i-arrow"/></svg></span></a>
+        <a href="#"><span class="journey__num">02</span><h3>Yeni tanı aldım</h3><p>Ne olduğunu ve beni neyin beklediğini anlamak istiyorum.</p><span class="journey__go"><svg><use href="#i-arrow"/></svg></span></a>
+        <a href="#"><span class="journey__num">03</span><h3>Tedavi görüyorum</h3><p>Yan etkiler, beslenme ve enfeksiyondan korunma.</p><span class="journey__go"><svg><use href="#i-arrow"/></svg></span></a>
+        <a href="#"><span class="journey__num">04</span><h3>Tedavi sonrası</h3><p>Takip süreci ve günlük hayata dönüş.</p><span class="journey__go"><svg><use href="#i-arrow"/></svg></span></a>
+        <a href="#"><span class="journey__num">05</span><h3>Hasta yakınıyım</h3><p>Sevdiğime nasıl destek olabilirim, kendime nasıl bakarım?</p><span class="journey__go"><svg><use href="#i-arrow"/></svg></span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section section--blue" aria-labelledby="talk-title">
+    <div class="container talk">
+      <div>
+        <h2 id="talk-title">Konuşmak ister misiniz?</h2>
+        <p class="lead">Aklınıza takılan bir soru, paylaşmak istediğiniz bir endişe… Ekibimiz ve gönüllü uzman hekimlerimiz size yardımcı olmaya hazır.</p>
+      </div>
+      <div class="talk__options">
+        <a class="talk__option" href="tel:+905301568768"><svg><use href="#i-phone"/></svg><strong>Bizi arayın</strong><span>0530 156 87 68</span></a>
+        <a class="talk__option" href="https://wa.me/905301568768"><svg><use href="#i-whatsapp"/></svg><strong>WhatsApp</strong><span>Mesaj yazın, size dönelim</span></a>
+        <a class="talk__option" href="#"><svg><use href="#i-question"/></svg><strong>Uzmana sorun</strong><span>Sorunuzu yazın, hekimlerimiz yanıtlasın</span></a>
+        <a class="talk__option" href="#"><svg><use href="#i-users"/></svg><strong>Hasta buluşmaları</strong><span>Benzer yoldan geçenlerle tanışın</span></a>
       </div>
     </div>
   </section>
 
-  <section class="section--tight" aria-labelledby="ev-title">
-    <div class="container">
-      <article class="event-feature">
-        <img src="assets/img/lenfoma-yuruyus.png" alt="Lenfomaya Karşı Yürü Bizimle — 12. Büyük Lenfoma Etkinliği afişi" width="228" height="307" loading="lazy">
-        <div>
-          <span class="eyebrow" style="color:#ffc48f">Son etkinliğimiz</span>
-          <h2 id="ev-title">Lenfomaya Karşı Yürü Bizimle — 12. Büyük Lenfoma Etkinliği</h2>
-          <p>"Kampüste Buluşalım" diyerek binlerce adımı lenfoma farkındalığı için attık. Katılan herkese teşekkür ederiz.</p>
-          <ul class="event-meta">
-            <li><svg><use href="#i-calendar"/></svg>20 Eylül 2026, Pazar</li>
-            <li><svg><use href="#i-pin"/></svg>Ankara Üniversitesi 10. Yıl Yerleşkesi</li>
-          </ul>
-        </div>
-        <div class="event-feature__aside">
-          <a class="btn btn--white" href="#">Fotoğrafları gör</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="news-title">
+  <section class="section" aria-labelledby="cond-title">
     <div class="container">
       <div class="section__head">
         <div>
-          <span class="eyebrow">Haberler &amp; etkinlikler</span>
-          <h2 id="news-title">Dernekten haberler</h2>
+          <span class="kicker">Hastalıklar</span>
+          <h2 id="cond-title">Hastalığınızı tanıyın</h2>
         </div>
-        <a class="link-arrow" href="haberler.html">Tümünü gör</a>
+        <a class="link-arrow" href="#">Kan kanserleri hakkında genel bilgiler</a>
       </div>
-      <div class="cards">
-        <article class="card">
-          <div class="card__media card__media--poster"><img src="assets/img/aml-sempozyum.jpg" alt="" loading="lazy"></div>
-          <div class="card__body">
-            <div class="card__meta"><span class="tag tag--teal">Sağlık çalışanları</span><time datetime="2026-09-21">21 Eylül 2026</time></div>
-            <h3><a href="#">AML Tedavisinde Yeni Ufuklar ve Yenilikçi Yaklaşım</a></h3>
-            <p>Nakile uygun olan ve olmayan hastalarda AML tedavisi, Ankara'da uzmanların katılımıyla ele alındı.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__media card__media--poster"><img src="assets/img/kml-bitecek.png" alt="" loading="lazy"></div>
-          <div class="card__body">
-            <div class="card__meta"><span class="tag tag--orange">Hasta bilgilendirme</span><time datetime="2026-09-22">22 Eylül 2026</time></div>
-            <h3><a href="#">KML Bitecek! — Canlı yayın kaydı</a></h3>
-            <p>Hasta ve hasta yakınlarına yönelik bilgilendirme toplantısının kaydını YouTube kanalımızdan izleyebilirsiniz.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__media card__media--poster"><img src="assets/img/lenfoma-bitecek.png" alt="" loading="lazy"></div>
-          <div class="card__body">
-            <div class="card__meta"><span class="tag tag--orange">Hasta bilgilendirme</span><time datetime="2026-09-15">15 Eylül 2026</time></div>
-            <h3><a href="#">Lenfoma Bitecek! — Canlı yayın kaydı</a></h3>
-            <p>Lenfoma tedavisindeki güncel gelişmeler, hastalarımızın sorularıyla birlikte konuşuldu.</p>
-          </div>
-        </article>
-      </div>
+      <ul class="conditions">
+        <li><a href="hastalik-aml.html"><span class="conditions__abbr">AML</span><span class="conditions__name">Akut Miyeloid Lösemi</span><span class="conditions__type">Lösemi</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">HL</span><span class="conditions__name">Hodgkin Lenfoma</span><span class="conditions__type">Lenfoma</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">ALL</span><span class="conditions__name">Akut Lenfoblastik Lösemi</span><span class="conditions__type">Lösemi</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">HDL</span><span class="conditions__name">Hodgkin Dışı Lenfoma</span><span class="conditions__type">Lenfoma</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">KML</span><span class="conditions__name">Kronik Miyeloid Lösemi</span><span class="conditions__type">Lösemi</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">MM</span><span class="conditions__name">Multipl Miyelom</span><span class="conditions__type">Miyelom</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">KLL</span><span class="conditions__name">Kronik Lenfositer Lösemi</span><span class="conditions__type">Lösemi</span></a></li>
+        <li><a href="#"><span class="conditions__abbr">A–Z</span><span class="conditions__name">Terimler sözlüğü</span><span class="conditions__type">Rehber</span></a></li>
+      </ul>
     </div>
   </section>
 
-  <section class="section section--white" aria-labelledby="story-title">
-    <div class="container">
-      <h2 id="story-title" class="visually-hidden">Ben de Kanseri Yendim</h2>
-      <div class="story">
-        <div class="story__visual">
-          <span class="quote-mark" aria-hidden="true">“</span>
-          <div>
-            <strong>Ben de Kanseri Yendim</strong>
-            <p style="margin:6px 0 0">Hastalarımızın kendi kaleminden umut hikâyeleri.</p>
-          </div>
-        </div>
-        <div class="story__body">
-          <blockquote>"Tanıyı duyduğum gün her şeyin bittiğini sandım. Dernekte benzer yollardan geçmiş insanlarla tanışınca, sorularımı sormaktan çekinmemeyi öğrendim."</blockquote>
-          <p style="color:var(--ink-3)">— Örnek alıntı · Hodgkin lenfoma, tedavisini tamamladı</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
-            <a class="btn btn--blue" href="#">Hikâyeleri oku</a>
-            <a class="btn btn--ghost" href="#">Hikâyeni paylaş</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--tight section--white" aria-label="Rakamlarla dernek">
-    <div class="container">
-      <div class="stats">
-        <div class="stat"><strong>2011</strong><span>kuruluş yılımız</span></div>
-        <div class="stat"><strong>7</strong><span>hastalık rehberi</span></div>
-        <div class="stat"><strong>14</strong><span>hasta kongresi</span></div>
-        <div class="stat"><strong>12</strong><span>büyük lenfoma etkinliği</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--warm" aria-labelledby="support-title">
+  <section class="section section--sand" aria-labelledby="stories-title">
     <div class="container">
       <div class="section__head">
         <div>
-          <span class="eyebrow">Destek ol</span>
-          <h2 id="support-title">Siz de bu dayanışmanın parçası olun</h2>
+          <span class="kicker">Hikâyeler</span>
+          <h2 id="stories-title">Bu yoldan geçenler anlatıyor</h2>
         </div>
+        <a class="link-arrow" href="#">Tüm hikâyeler</a>
       </div>
-      <div class="support-band">
-        <a class="support" href="bagis.html"><svg><use href="#i-heart"/></svg><strong>Bağış yap</strong><span>Tek seferlik ya da düzenli bağışla çalışmalarımızı sürdürün.</span></a>
-        <a class="support" href="#"><svg><use href="#i-users"/></svg><strong>Üye ol</strong><span>Derneğimize üye olun, aidatınızı online ödeyin.</span></a>
-        <a class="support" href="#"><svg><use href="#i-drop"/></svg><strong>Kök hücre vericisi ol</strong><span>Bir hastanın ihtiyaç duyduğu uygun verici siz olabilirsiniz.</span></a>
-        <a class="support" href="#"><svg><use href="#i-hands"/></svg><strong>Gönüllü ol</strong><span>Etkinliklerimizde ve kampanyalarımızda bize katılın.</span></a>
+      <div class="stories">
+        <a class="story story--feature" href="#">
+          <figure class="photo photo--empty"><figcaption><svg><use href="#i-camera"/></svg>Hikâye sahibinin portresi</figcaption></figure>
+          <span class="story__tag">Ben de kanseri yendim</span>
+          <blockquote>"Tanıyı duyduğum gün her şeyin bittiğini sandım. Burada sorularımı sormaktan çekinmemeyi öğrendim."</blockquote>
+          <div class="story__who"><span class="story__avatar">A</span><span><b>Örnek alıntı</b>Hodgkin lenfoma, tedavisini tamamladı</span></div>
+        </a>
+        <a class="story story--sky" href="#">
+          <span class="story__tag">Hastalıkla yaşamak</span>
+          <blockquote>"Miyelomla yaşamayı öğrendim. Her kontrol günü artık bir korku değil, bir rutin."</blockquote>
+          <div class="story__who"><span class="story__avatar">M</span><span><b>Örnek alıntı</b>Multipl miyelom</span></div>
+        </a>
+        <a class="story story--mint" href="#">
+          <span class="story__tag">Hasta yakını</span>
+          <blockquote>"Annemin yanında güçlü durmaya çalışırken kendimi unutmuştum. Buluşmalarda yalnız olmadığımı gördüm."</blockquote>
+          <div class="story__who"><span class="story__avatar">E</span><span><b>Örnek alıntı</b>KLL hastası yakını</span></div>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="events-title">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="kicker">Etkinlikler</span>
+          <h2 id="events-title">Birlikte öğreniyoruz</h2>
+        </div>
+        <a class="link-arrow" href="haberler.html">Tüm haberler ve etkinlikler</a>
+      </div>
+      <ul class="events">
+        <li class="event">
+          <div class="event__date"><strong>22</strong><span>Eyl 2026</span></div>
+          <div><span class="tag tag--orange">Hasta bilgilendirme · Canlı yayın</span><h3><a href="#">KML Bitecek!</a></h3><p>Hasta ve hasta yakınlarına yönelik bilgilendirme toplantısı.</p></div>
+          <a class="btn btn--outline btn--sm" href="#"><svg><use href="#i-video"/></svg>Kaydı izleyin</a>
+        </li>
+        <li class="event">
+          <div class="event__date"><strong>21</strong><span>Eyl 2026</span></div>
+          <div><span class="tag tag--green">Sağlık çalışanları</span><h3><a href="#">AML Tedavisinde Yeni Ufuklar ve Yenilikçi Yaklaşım</a></h3><p>Holiday Inn Çukurambar, Ankara</p></div>
+          <a class="btn btn--outline btn--sm" href="#">Ayrıntılar</a>
+        </li>
+        <li class="event">
+          <div class="event__date"><strong>20</strong><span>Eyl 2026</span></div>
+          <div><span class="tag">Farkındalık</span><h3><a href="#">Lenfomaya Karşı Yürü Bizimle — 12. Büyük Lenfoma Etkinliği</a></h3><p>Ankara Üniversitesi 10. Yıl Yerleşkesi</p></div>
+          <a class="btn btn--outline btn--sm" href="#">Fotoğraflar</a>
+        </li>
+        <li class="event">
+          <div class="event__date"><strong>15</strong><span>Eyl 2026</span></div>
+          <div><span class="tag tag--orange">Hasta bilgilendirme · Canlı yayın</span><h3><a href="#">Lenfoma Bitecek!</a></h3><p>Hasta ve hasta yakınlarına yönelik bilgilendirme toplantısı.</p></div>
+          <a class="btn btn--outline btn--sm" href="#"><svg><use href="#i-video"/></svg>Kaydı izleyin</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--navy" aria-labelledby="give-title">
+    <div class="container give">
+      <div>
+        <span class="kicker" style="color:var(--orange)">Destek olun</span>
+        <h2 id="give-title">Bir hastanın yanında olmanın birçok yolu var.</h2>
+        <p class="lead">Bağışlarınız hasta eğitimlerine, ücretsiz yayınlara ve hasta haklarının savunulmasına dönüşüyor.</p>
+        <a class="btn btn--primary" href="bagis.html" style="margin-top:12px"><svg><use href="#i-heart"/></svg>Bağış yapın</a>
+      </div>
+      <ul class="give__list">
+        <li><a href="bagis.html"><svg><use href="#i-heart"/></svg><span><strong>Bağış yapın</strong><span>Tek seferlik ya da her ay düzenli</span></span><i>→</i></a></li>
+        <li><a href="#"><svg><use href="#i-users"/></svg><span><strong>Üye olun</strong><span>Derneğimizin bir parçası olun</span></span><i>→</i></a></li>
+        <li><a href="#"><svg><use href="#i-drop"/></svg><span><strong>Kök hücre vericisi olun</strong><span>Bir hastanın aradığı uygun verici siz olabilirsiniz</span></span><i>→</i></a></li>
+        <li><a href="#"><svg><use href="#i-hands"/></svg><span><strong>Gönüllü olun</strong><span>Etkinlik ve kampanyalarımızda yer alın</span></span><i>→</i></a></li>
+      </ul>
     </div>
   </section>
 
   <section class="section" aria-labelledby="nl-title">
     <div class="container">
+      <div class="facts" aria-label="Rakamlarla derneğimiz" style="margin-bottom:72px">
+        <div class="fact"><strong>2011</strong><span>yılından beri</span></div>
+        <div class="fact"><strong>14</strong><span>hasta kongresi</span></div>
+        <div class="fact"><strong>12</strong><span>büyük lenfoma etkinliği</span></div>
+        <div class="fact"><strong>7</strong><span>hastalık için rehber</span></div>
+      </div>
       <div class="newsletter">
         <div>
-          <h2 id="nl-title">LLMBİR Bülten</h2>
-          <p>Etkinlikler, hasta toplantıları ve yeni yayınlarımızdan ayda bir haberdar olun.</p>
+          <h2 id="nl-title">Haberdar olun</h2>
+          <p>Hasta buluşmaları, canlı yayınlar ve yeni yayınlarımız ayda bir e-postanızda.</p>
         </div>
         <form action="#" method="post">
           <label class="visually-hidden" for="nl-email">E-posta adresiniz</label>
           <input id="nl-email" type="email" name="email" placeholder="E-posta adresiniz" autocomplete="email" required>
-          <button class="btn btn--primary" type="submit">Abone ol</button>
+          <button class="btn btn--navy" type="submit">Abone olun</button>
           <label class="consent"><input type="checkbox" required> <span><a href="#">Aydınlatma metnini</a> okudum, bülten gönderimine onay veriyorum.</span></label>
         </form>
       </div>

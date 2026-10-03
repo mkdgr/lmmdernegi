@@ -2,102 +2,113 @@
 
 <div class="topbar">
   <div class="container">
-    <div class="topbar__contact">
-      <span><svg><use href="#i-phone"/></svg><a href="tel:+905301568768">0530 156 87 68</a></span>
-      <span class="hide-sm"><svg><use href="#i-mail"/></svg><a href="mailto:info@losemilenfomamiyelom.org">info@losemilenfomamiyelom.org</a></span>
+    <nav class="topbar__links" aria-label="Hızlı bağlantılar">
+      <a href="#">Hikâyeler</a>
+      <a href="#">Sağlık çalışanları için</a>
+      <a href="{{base}}haberler.html">Haberler</a>
+      <a href="#">Basın</a>
+      <a href="#">İletişim</a>
+    </nav>
+    <div class="a11y" role="group" aria-label="Yazı boyutu ve kontrast">
+      <span>Yazı boyutu</span>
+      <button type="button" data-fontsize-set="md" aria-label="Normal yazı boyutu">A</button>
+      <button type="button" data-fontsize-set="lg" aria-label="Büyük yazı boyutu" style="font-size:1.1em">A</button>
+      <button type="button" data-fontsize-set="xl" aria-label="Çok büyük yazı boyutu" style="font-size:1.25em">A</button>
+      <button type="button" data-contrast-toggle aria-label="Yüksek kontrast" title="Yüksek kontrast">◐</button>
     </div>
-    <div class="topbar__tools">
-      <a class="topbar__ask" href="#"><svg><use href="#i-message"/></svg>Derneğe Sorun</a>
-      <div class="a11y" role="group" aria-label="Yazı boyutu">
-        <button type="button" data-fontsize-set="md" aria-label="Normal yazı boyutu">A</button>
-        <button type="button" data-fontsize-set="lg" aria-label="Büyük yazı boyutu" style="font-size:1.05em">A</button>
-        <button type="button" data-fontsize-set="xl" aria-label="Çok büyük yazı boyutu" style="font-size:1.2em">A</button>
-        <button type="button" data-contrast-toggle aria-label="Yüksek kontrast" title="Yüksek kontrast">◐</button>
-      </div>
-      <nav class="lang" aria-label="Dil seçimi">
-        <a href="{{base}}index.html" lang="tr" aria-current="true">TR</a>
-        <a href="{{base}}en/index.html" lang="en">EN</a>
-      </nav>
-    </div>
+    <nav class="lang" aria-label="Dil seçimi">
+      <a href="{{base}}index.html" lang="tr" aria-current="true">TR</a>
+      <a href="{{base}}en/index.html" lang="en">EN</a>
+    </nav>
   </div>
 </div>
 
 <header class="header">
   <div class="container">
     <a class="brand" href="{{base}}index.html">
-      <img src="{{base}}assets/img/logo.png" alt="" width="60" height="60">
-      <span class="brand__name">Lösemi Lenfoma<br>Miyelom Derneği<small>2011'den beri hastaların yanında</small></span>
+      <img src="{{base}}assets/img/logo.png" alt="" width="58" height="58">
+      <span class="brand__name">Lösemi Lenfoma<br>Miyelom Derneği</span>
     </a>
 
     <div class="nav-backdrop" data-nav-close></div>
     <nav class="nav" id="site-nav" aria-label="Ana menü">
-      <button class="nav-toggle nav-close" type="button" data-nav-close aria-label="Menüyü kapat"><svg><use href="#i-close"/></svg></button>
+      <button class="icon-btn nav-close" type="button" data-nav-close aria-label="Menüyü kapat"><svg><use href="#i-close"/></svg></button>
       <ul class="nav__list">
         <li class="nav__item">
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-hastalik"{{cur:hastalik}}>Hastalıklar <svg><use href="#i-chevron"/></svg></button>
           <ul class="dropdown dropdown--wide" id="dd-hastalik">
+            <li class="dropdown__head">Lösemi</li>
             <li><a href="{{base}}hastalik-aml.html">Akut Miyeloid Lösemi <small>AML</small></a></li>
             <li><a href="#">Akut Lenfoblastik Lösemi <small>ALL</small></a></li>
             <li><a href="#">Kronik Miyeloid Lösemi <small>KML</small></a></li>
             <li><a href="#">Kronik Lenfositer Lösemi <small>KLL</small></a></li>
+            <li class="dropdown__head">Lenfoma ve miyelom</li>
             <li><a href="#">Hodgkin Lenfoma <small>HL</small></a></li>
             <li><a href="#">Hodgkin Dışı Lenfoma <small>HDL</small></a></li>
             <li><a href="#">Multipl Miyelom <small>MM</small></a></li>
-            <li><a href="#">Tüm hastalıklar <small>Genel bilgiler ve sözlük</small></a></li>
+            <li><a href="#">Kan kanserleri hakkında <small>Genel bilgiler ve sözlük</small></a></li>
           </ul>
         </li>
         <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-rehber"{{cur:rehber}}>Hasta Rehberi <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-rehber">
-            <li><a href="#">Yeni tanı aldım, ne yapmalıyım?</a></li>
-            <li><a href="#">Beslenme ve enfeksiyondan korunma</a></li>
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek-al"{{cur:rehber}}>Size destek <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown dropdown--wide" id="dd-destek-al">
+            <li class="dropdown__head">Şu an neredesiniz?</li>
+            <li><a href="#">Endişeliyim <small>Belirtiler ve tetkikler</small></a></li>
+            <li><a href="#">Yeni tanı aldım <small>İlk haftalarda bilmeniz gerekenler</small></a></li>
+            <li><a href="#">Tedavi görüyorum <small>Yan etkiler, beslenme, enfeksiyon</small></a></li>
+            <li><a href="#">Tedavi sonrası <small>Takip ve yeni hayata uyum</small></a></li>
+            <li><a href="#">Hasta yakınıyım <small>Nasıl destek olabilirim?</small></a></li>
+            <li class="dropdown__head">Bize ulaşın</li>
+            <li><a href="#">Uzmana sorun</a></li>
+            <li><a href="#">Hasta buluşmaları</a></li>
+            <li><a href="#">Hikâyeler</a></li>
             <li><a href="#">Hasta ve hekim hakları</a></li>
-            <li><a href="#">Alternatif tedaviler hakkında uyarılar</a></li>
-            <li><a href="#">COVID-19 ve aşı bilgilendirmesi</a></li>
-            <li><a href="#">Broşürler ve yayınlar</a></li>
-            <li><a href="#">Sıkça sorulan sorular</a></li>
-          </ul>
-        </li>
-        <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek"{{cur:destek}}>Destek Ol <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-destek">
-            <li><a href="{{base}}bagis.html">Online bağış &amp; aidat</a></li>
-            <li><a href="#">Üye ol</a></li>
-            <li><a href="#">Kök hücre vericisi ol</a></li>
-            <li><a href="#">Gönüllü ol</a></li>
-            <li><a href="{{base}}bagis.html#banka">Banka hesap bilgileri</a></li>
+            <li><a href="#">Ücretsiz broşürler</a></li>
           </ul>
         </li>
         <li class="nav__item">
           <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-etkinlik"{{cur:etkinlik}}>Etkinlikler <svg><use href="#i-chevron"/></svg></button>
           <ul class="dropdown" id="dd-etkinlik">
             <li><a href="{{base}}haberler.html">Haberler &amp; duyurular</a></li>
+            <li><a href="#">Canlı yayın kayıtları <small>Lenfoma Bitecek, KML Bitecek…</small></a></li>
             <li><a href="#">Kongreler ve sempozyumlar</a></li>
-            <li><a href="#">Farkındalık kampanyaları <small>Lenfoma Bitecek, KML Bitecek, Ben de Varım</small></a></li>
+            <li><a href="#">Farkındalık kampanyaları</a></li>
             <li><a href="#">Gençlik kampı</a></li>
-            <li><a href="#">LLMBİR Bülten</a></li>
             <li><a href="#">Foto galeri</a></li>
           </ul>
         </li>
-        <li class="nav__item"><a class="nav__link" href="#"{{cur:hikaye}}>Hikâyeler</a></li>
         <li class="nav__item">
-          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-kurumsal"{{cur:kurumsal}}>Kurumsal <svg><use href="#i-chevron"/></svg></button>
-          <ul class="dropdown" id="dd-kurumsal">
-            <li><a href="#">Hakkımızda</a></li>
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-destek-ol"{{cur:destek}}>Destek olun <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown" id="dd-destek-ol">
+            <li><a href="{{base}}bagis.html">Bağış yapın</a></li>
+            <li><a href="#">Üye olun</a></li>
+            <li><a href="#">Kök hücre vericisi olun</a></li>
+            <li><a href="#">Gönüllü olun</a></li>
+            <li><a href="{{base}}bagis.html#banka">Banka hesaplarımız</a></li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-hakkimizda"{{cur:kurumsal}}>Hakkımızda <svg><use href="#i-chevron"/></svg></button>
+          <ul class="dropdown" id="dd-hakkimizda">
+            <li><a href="#">Derneğimiz</a></li>
             <li><a href="#">Yönetim kurulu</a></li>
             <li><a href="#">Tüzük</a></li>
-            <li><a href="#">Sağlık çalışanları için</a></li>
-            <li><a href="#">Uluslararası bağlantılar</a></li>
-            <li><a href="#">Basın</a></li>
+            <li><a href="#">Uluslararası iş birlikleri</a></li>
             <li><a href="#">İletişim</a></li>
           </ul>
         </li>
       </ul>
+      <div class="nav__mobile-cta" style="display:none">
+        <a class="btn btn--blue" href="tel:+905301568768"><svg><use href="#i-phone"/></svg>0530 156 87 68</a>
+        <a class="btn btn--outline" href="#"><svg><use href="#i-question"/></svg>Uzmana sorun</a>
+      </div>
     </nav>
 
-    <div class="header__cta">
-      <a class="btn btn--primary btn--sm" href="{{base}}bagis.html"><svg><use href="#i-heart"/></svg><span class="btn__label">Bağış Yap</span></a>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+905301568768"><svg><use href="#i-phone"/></svg><span><small>Bize ulaşın</small><strong>0530 156 87 68</strong></span></a>
+      <a class="icon-btn header__search" href="{{base}}index.html#ara" aria-label="Sitede ara"><svg><use href="#i-search"/></svg></a>
+      <a class="btn btn--primary" href="{{base}}bagis.html"><span class="hide-sm">Bağış yapın</span><span class="show-sm" aria-hidden="true">Bağış</span></a>
+      <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><svg><use href="#i-menu"/></svg><span>Menü</span></button>
     </div>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menüyü aç"><svg><use href="#i-menu"/></svg></button>
   </div>
 </header>

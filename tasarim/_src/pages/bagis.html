@@ -9,7 +9,7 @@ active: destek
     <div class="container">
       <ol class="breadcrumb">
         <li><a href="index.html">Ana sayfa</a></li>
-        <li><a href="#">Destek ol</a></li>
+        <li><a href="#">Destek olun</a></li>
         <li><span aria-current="page">Online bağış &amp; aidat</span></li>
       </ol>
       <h1>Bir hastanın yanında olun</h1>
@@ -27,37 +27,37 @@ active: destek
 
       <fieldset>
         <legend>Ne için ödeme yapıyorsunuz?</legend>
-        <div class="radio-cards">
-          <div class="radio-card"><input type="radio" id="t-bagis" name="type" value="bagis" checked><label for="t-bagis"><strong>Bağış</strong><span>Derneğin çalışmalarına destek</span></label></div>
-          <div class="radio-card"><input type="radio" id="t-aidat" name="type" value="aidat"><label for="t-aidat"><strong>Üyelik aidatı</strong><span>Yıllık üye aidatı ödemesi</span></label></div>
-          <div class="radio-card"><input type="radio" id="t-giris" name="type" value="giris"><label for="t-giris"><strong>Giriş aidatı</strong><span>Yeni üyeler için</span></label></div>
+        <div class="choice-group choice-group--3">
+          <div class="choice"><input type="radio" id="t-bagis" name="type" value="bagis" checked><label for="t-bagis">Bağış<span>Derneğin çalışmalarına destek</span></label></div>
+          <div class="choice"><input type="radio" id="t-aidat" name="type" value="aidat"><label for="t-aidat">Üyelik aidatı<span>Yıllık üye aidatı</span></label></div>
+          <div class="choice"><input type="radio" id="t-giris" name="type" value="giris"><label for="t-giris">Giriş aidatı<span>Yeni üyeler için</span></label></div>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Sıklık</legend>
-        <div class="segmented" style="max-width:380px">
-          <input type="radio" id="fq-once" name="frequency" value="tek" data-label="Tek seferlik" checked><label for="fq-once">Tek seferlik</label>
-          <input type="radio" id="fq-month" name="frequency" value="aylik" data-label="Her ay"><label for="fq-month">Her ay düzenli</label>
+        <div class="choice-group choice-group--2">
+          <div class="choice"><input type="radio" id="fq-once" name="frequency" value="tek" data-label="Tek seferlik" checked><label for="fq-once">Tek seferlik</label></div>
+          <div class="choice"><input type="radio" id="fq-month" name="frequency" value="aylik" data-label="Her ay"><label for="fq-month">Her ay düzenli</label></div>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Tutar</legend>
-        <div class="amounts amounts--lg">
-          <div class="amount"><input type="radio" id="b100" name="amount" value="100"><label for="b100">100 ₺</label></div>
-          <div class="amount"><input type="radio" id="b200" name="amount" value="200"><label for="b200">200 ₺</label></div>
-          <div class="amount"><input type="radio" id="b500" name="amount" value="500" checked><label for="b500">500 ₺</label></div>
-          <div class="amount"><input type="radio" id="b1000" name="amount" value="1000"><label for="b1000">1.000 ₺</label></div>
+        <div class="choice-group choice-group--4">
+          <div class="choice choice--amount"><input type="radio" id="b100" name="amount" value="100"><label for="b100">100 ₺</label></div>
+          <div class="choice choice--amount"><input type="radio" id="b200" name="amount" value="200"><label for="b200">200 ₺</label></div>
+          <div class="choice choice--amount"><input type="radio" id="b500" name="amount" value="500" checked><label for="b500">500 ₺</label></div>
+          <div class="choice choice--amount"><input type="radio" id="b1000" name="amount" value="1000"><label for="b1000">1.000 ₺</label></div>
         </div>
-        <label class="amount-custom" style="max-width:380px"><span class="visually-hidden">Farklı tutar</span><input type="text" inputmode="numeric" name="custom" placeholder="Farklı bir tutar girin" data-amount-custom><span>₺</span></label>
+        <label class="amount-custom"><span class="visually-hidden">Farklı tutar</span><input type="text" inputmode="numeric" name="custom" placeholder="Farklı bir tutar girin" data-amount-custom><span>₺</span></label>
       </fieldset>
 
       <fieldset>
         <legend>Bağışçı bilgileri</legend>
-        <div class="segmented" style="max-width:380px;margin-bottom:18px">
-          <input type="radio" id="dt-ind" name="donor_type" value="bireysel" checked><label for="dt-ind">Bireysel</label>
-          <input type="radio" id="dt-corp" name="donor_type" value="kurumsal"><label for="dt-corp">Kurumsal</label>
+        <div class="choice-group choice-group--2" style="margin-bottom:22px">
+          <div class="choice"><input type="radio" id="dt-ind" name="donor_type" value="bireysel" checked><label for="dt-ind">Bireysel</label></div>
+          <div class="choice"><input type="radio" id="dt-corp" name="donor_type" value="kurumsal"><label for="dt-corp">Kurumsal</label></div>
         </div>
         <div class="grid-2">
           <div class="field"><label for="d-name">Ad soyad</label><input id="d-name" name="name" autocomplete="name" required></div>
@@ -69,7 +69,7 @@ active: destek
         <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="#">KVKK aydınlatma metnini</a> okudum ve kişisel verilerimin bağış işlemi kapsamında işlenmesini kabul ediyorum.</span></label>
       </fieldset>
 
-      <button class="btn btn--primary btn--block" type="submit" style="min-height:56px;font-size:1.1rem"><svg><use href="#i-lock"/></svg>Güvenli ödeme sayfasına geç · <span data-amount-out>500 ₺</span></button>
+      <button class="btn btn--primary btn--block" type="submit" style="min-height:60px;font-size:1.1rem"><svg><use href="#i-lock"/></svg>Güvenli ödeme sayfasına geç · <span data-amount-out>500 ₺</span></button>
       <div class="trust">
         <span><svg><use href="#i-shield"/></svg>3D Secure doğrulama</span>
         <span><svg><use href="#i-lock"/></svg>Kart bilgileriniz Garanti BBVA'nın güvenli sayfasında girilir</span>
