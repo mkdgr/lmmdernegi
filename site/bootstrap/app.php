@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->alias(['locale' => \App\Http\Middleware\SetLocale::class]);
+        // Garanti BBVA ödeme dönüşleri bankadan POST ile gelir; CSRF jetonu taşımaz.
+        // Bu istekler hash ile doğrulanır (App\Services\GarantiPos::verifyResponse).
+        $middleware->validateCsrfTokens(except: ['odeme/garanti/*']);
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        //
+    })->create();
