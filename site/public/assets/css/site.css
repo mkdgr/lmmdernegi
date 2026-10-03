@@ -629,6 +629,7 @@ legend { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem;
 /* Zengin metin içi öğeler */
 .prose img { max-width: 100%; height: auto; border-radius: var(--r); margin: 1.2em 0; }
 .prose p > img:only-child { margin-inline: auto; }
+.prose .photo img { margin: 0; height: 100%; border-radius: 0; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.4em 0; font-size: 1rem; }
 .prose th, .prose td { border-bottom: 1px solid var(--line); padding: 12px 10px; text-align: left; vertical-align: top; }
 .prose th { color: var(--navy); }

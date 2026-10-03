@@ -145,7 +145,12 @@ class LegacyContentSeeder extends Seeder
 
             return 'href="/storage/'.$dir.'/'.$doc['name'].'" target="_blank" rel="noopener"';
         }, $html);
-        // Görsel yolları: /storage/legacy/... (göreli değil, kök göreli)
+        // Eski sitedeki büyütme bağlantıları (/Resim/...) → sardıkları görselin kendisi
+        $html = preg_replace('#<a href="/Resim/[^"]*">(\s*<img[^>]+src="([^"]+)"[^>]*>\s*)</a>#', '<a href="$2" target="_blank" rel="noopener">$1</a>', $html);
+        // Şemasız dış bağlantılar: "www.cancer.org" → "https://www.cancer.org"
+        $html = preg_replace('#href="(www\.[^"]+)"#', 'href="https://$1"', $html);
+        // Eski sitede hiç yayımlanmamış kişi sayfalarına giden bağlantılar (yönetim kurulu) → düz metin
+        $html = preg_replace('#<a href="/TR,(37|38)/[^"]*">(.*?)</a>#s', '$2', $html);
         $html = str_replace(['<h2></h2>', '<p> </p>'], '', $html);
 
         return trim($html);

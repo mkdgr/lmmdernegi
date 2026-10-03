@@ -25,9 +25,9 @@
 <meta property="og:locale" content="{{ $locale === 'en' ? 'en_GB' : 'tr_TR' }}">
 <meta name="theme-color" content="#005495">
 <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="{{ asset('assets/fonts/figtree-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ asset('assets/fonts/bricolage-grotesque-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('assets/fonts/fonts.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/site.css') }}?v={{ filemtime(public_path('assets/css/site.css')) }}">
 @stack('head')
 </head>
