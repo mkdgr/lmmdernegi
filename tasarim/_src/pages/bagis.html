@@ -1,0 +1,111 @@
+---
+title: Bağış Yap — Lösemi Lenfoma Miyelom Derneği
+description: Lösemi, lenfoma ve miyelom hastalarına destek olmak için online bağış yapın veya üyelik aidatınızı ödeyin.
+lang: tr
+active: destek
+---
+<main id="main">
+  <header class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Ana sayfa</a></li>
+        <li><a href="#">Destek ol</a></li>
+        <li><span aria-current="page">Online bağış &amp; aidat</span></li>
+      </ol>
+      <h1>Bir hastanın yanında olun</h1>
+      <p>Bağışlarınız hasta ve hasta yakınlarına yönelik eğitimler, bilgilendirme yayınları, farkındalık kampanyaları ve hasta haklarının savunulması için kullanılır.</p>
+    </div>
+  </header>
+
+  <div class="container layout layout--2">
+    <form class="form-card" action="#" method="post" data-donate novalidate>
+      <ol class="steps" aria-label="Bağış adımları">
+        <li class="is-active" aria-current="step">1. Bağış bilgileri</li>
+        <li>2. Kişisel bilgiler</li>
+        <li>3. Güvenli ödeme</li>
+      </ol>
+
+      <fieldset>
+        <legend>Ne için ödeme yapıyorsunuz?</legend>
+        <div class="radio-cards">
+          <div class="radio-card"><input type="radio" id="t-bagis" name="type" value="bagis" checked><label for="t-bagis"><strong>Bağış</strong><span>Derneğin çalışmalarına destek</span></label></div>
+          <div class="radio-card"><input type="radio" id="t-aidat" name="type" value="aidat"><label for="t-aidat"><strong>Üyelik aidatı</strong><span>Yıllık üye aidatı ödemesi</span></label></div>
+          <div class="radio-card"><input type="radio" id="t-giris" name="type" value="giris"><label for="t-giris"><strong>Giriş aidatı</strong><span>Yeni üyeler için</span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sıklık</legend>
+        <div class="segmented" style="max-width:380px">
+          <input type="radio" id="fq-once" name="frequency" value="tek" data-label="Tek seferlik" checked><label for="fq-once">Tek seferlik</label>
+          <input type="radio" id="fq-month" name="frequency" value="aylik" data-label="Her ay"><label for="fq-month">Her ay düzenli</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tutar</legend>
+        <div class="amounts amounts--lg">
+          <div class="amount"><input type="radio" id="b100" name="amount" value="100"><label for="b100">100 ₺</label></div>
+          <div class="amount"><input type="radio" id="b200" name="amount" value="200"><label for="b200">200 ₺</label></div>
+          <div class="amount"><input type="radio" id="b500" name="amount" value="500" checked><label for="b500">500 ₺</label></div>
+          <div class="amount"><input type="radio" id="b1000" name="amount" value="1000"><label for="b1000">1.000 ₺</label></div>
+        </div>
+        <label class="amount-custom" style="max-width:380px"><span class="visually-hidden">Farklı tutar</span><input type="text" inputmode="numeric" name="custom" placeholder="Farklı bir tutar girin" data-amount-custom><span>₺</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Bağışçı bilgileri</legend>
+        <div class="segmented" style="max-width:380px;margin-bottom:18px">
+          <input type="radio" id="dt-ind" name="donor_type" value="bireysel" checked><label for="dt-ind">Bireysel</label>
+          <input type="radio" id="dt-corp" name="donor_type" value="kurumsal"><label for="dt-corp">Kurumsal</label>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label for="d-name">Ad soyad</label><input id="d-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="d-tc">T.C. kimlik no <span class="opt">(makbuz için)</span></label><input id="d-tc" name="tckn" inputmode="numeric" maxlength="11" autocomplete="off"></div>
+          <div class="field"><label for="d-email">E-posta</label><input id="d-email" name="email" type="email" autocomplete="email" required><span class="hint">Bağış makbuzunuz bu adrese gönderilir.</span></div>
+          <div class="field"><label for="d-phone">Telefon</label><input id="d-phone" name="phone" type="tel" autocomplete="tel" placeholder="05xx xxx xx xx"></div>
+        </div>
+        <label class="check"><input type="checkbox" name="anonymous"> Bağışımda adım gizli tutulsun.</label>
+        <label class="check"><input type="checkbox" name="kvkk" required> <span><a href="#">KVKK aydınlatma metnini</a> okudum ve kişisel verilerimin bağış işlemi kapsamında işlenmesini kabul ediyorum.</span></label>
+      </fieldset>
+
+      <button class="btn btn--primary btn--block" type="submit" style="min-height:56px;font-size:1.1rem"><svg><use href="#i-lock"/></svg>Güvenli ödeme sayfasına geç · <span data-amount-out>500 ₺</span></button>
+      <div class="trust">
+        <span><svg><use href="#i-shield"/></svg>3D Secure doğrulama</span>
+        <span><svg><use href="#i-lock"/></svg>Kart bilgileriniz Garanti BBVA'nın güvenli sayfasında girilir</span>
+        <span><svg><use href="#i-card"/></svg>Visa · Mastercard · Troy · Amex</span>
+      </div>
+    </form>
+
+    <aside class="summary">
+      <div class="summary__box" aria-live="polite">
+        <h2>Bağış özetiniz</h2>
+        <div class="summary__row"><span>Tür</span><strong>Bağış</strong></div>
+        <div class="summary__row"><span>Sıklık</span><strong data-freq-out>Tek seferlik</strong></div>
+        <div class="summary__total"><span>Toplam</span><strong data-amount-out>500 ₺</strong></div>
+      </div>
+
+      <div class="impact">
+        <h3>Desteğiniz neye dönüşüyor?</h3>
+        <ul>
+          <li><b>Eğitim</b>Hasta ve yakınlarına yönelik bilgilendirme toplantıları ve canlı yayınlar</li>
+          <li><b>Yayın</b>Ücretsiz dağıtılan hastalık rehberleri ve broşürler</li>
+          <li><b>Farkındalık</b>Lenfoma Bitecek, KML Bitecek gibi kampanyalar</li>
+          <li><b>Savunuculuk</b>Hasta haklarının ve ilaca erişimin takibi</li>
+        </ul>
+      </div>
+
+      <div class="bank-box" id="banka">
+        <h3>Havale / EFT ile bağış</h3>
+        <p style="margin:0;color:var(--ink-3);font-size:.88rem">Alıcı: Lösemi Lenfoma Miyelom Derneği</p>
+        <dl>
+          <dt>Garanti BBVA</dt>
+          <dd><code>TR02 0006 2001 3610 0006 2936 42</code><button class="copy-btn" type="button" data-copy="TR020006200136100006293642">Kopyala</button></dd>
+          <dt>Fibabanka · Yıldız Şube</dt>
+          <dd><code>TR27 0010 3000 0000 0024 1921 26</code><button class="copy-btn" type="button" data-copy="TR270010300000000024192126">Kopyala</button></dd>
+        </dl>
+        <p style="margin:12px 0 0;font-size:.82rem;color:var(--ink-3)">Açıklama kısmına ad soyadınızı ve "bağış" yazmayı unutmayın.</p>
+      </div>
+    </aside>
+  </div>
+</main>
