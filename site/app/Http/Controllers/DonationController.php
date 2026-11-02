@@ -92,7 +92,8 @@ class DonationController extends Controller
         }
 
         $pos = GarantiPos::make();
-        $verified = $pos->verifyResponse($data);
+        // POS yapılandırılmamışsa (store_key boş) imza sahte üretilebilir; bu durumda dönüş asla doğrulanmış sayılmaz.
+        $verified = $pos->isConfigured() && $pos->verifyResponse($data);
         // Ek güvence: bankanın onayladığı tutar kayıttakiyle aynı olmalı (kuruş)
         $amountOk = ! isset($data['txnamount']) || (string) $data['txnamount'] === (string) ($donation->amount * 100);
         $approved = $verified && $amountOk && $pos->isApproved($data);
